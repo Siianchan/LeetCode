@@ -89,3 +89,25 @@ class ListNode {
         val = x;
     }
 }
+class MyNode {
+    ListNode head=null;
+    public void addNode(int a){
+        ListNode l=new ListNode(a);
+        if(head==null){
+            head=l;
+            return;
+        }
+        ListNode tmp=head;
+        while (tmp.next!=null){
+            tmp=tmp.next;
+        }
+        tmp.next=l;
+    }
+    public  void printNode() {
+        ListNode head = this.head;
+        while (head != null) {
+            System.out.println(head.val);
+            head = head.next;
+        }
+    }
+}
