@@ -16,6 +16,8 @@ public class Strstr {
      * 输出: 2
      * 示例 2:
      * 输入: haystack = "aaaaa", needle = "bba"
+     * 输入: haystack = "aaaaa", needle = "bba"
+     * 输入: haystack = "aaaaa", needle = "bba"
      * 输出: -1
      */
     public static void main(String args[]) {
