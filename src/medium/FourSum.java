@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class FourSum {
     /**
+     * 四数之和
      * 给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不重复的四元组。
      * 注意：
      * 答案中不可以包含重复的四元组。
@@ -36,19 +37,24 @@ public class FourSum {
         }
         Arrays.sort(nums);
         for (int x = 0; x < nums.length - 3; x++) {
+            //先固定第一个数
             if (target>0&&nums[x] > target) {
                 break;
             }
             if (x > 0 && nums[x] == nums[x - 1]) {
+                //去重复
                 continue;
             }
             for (int y = x + 1; y < nums.length - 2; y++) {
+                //对第二个数进行循环
                 if (y > x + 1 && nums[y] == nums[y - 1]) {
+                    //去重复
                     continue;
                 }
                 int a = y + 1;
                 int b = nums.length - 1;
                 while (a < b) {
+                    //运用双指针
                     //当a小于b的时候，不停的一移动a和b的指针位置
                     if (nums[x] + nums[y] + nums[a] + nums[b] > target) {
                         //移动规则：当三个数相加大于0的时候，将b指针往前移动一格（因为是排了序的，所以必定减少和）
