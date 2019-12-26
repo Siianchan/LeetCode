@@ -81,7 +81,7 @@ public class AddTwoNumbers {
     }
 }
 
-class ListNode {
+class   ListNode {
     int val;
     ListNode next;
 
