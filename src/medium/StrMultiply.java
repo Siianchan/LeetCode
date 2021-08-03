@@ -28,15 +28,20 @@ public class StrMultiply {
     public static void main(String[] args) {
         StrMultiply s = new StrMultiply();
 //        System.out.println(s.multiply("2", "3"));
-        System.out.println(s.multiply2("999999999", "999999999999"));
+        System.out.println(s.multiply2("999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999", "999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"));
     }
-    public String multiply2(String num1, String num2) {
 
-        BigInteger integer1=new BigInteger(num1);
-        BigInteger integer2=new BigInteger(num2);
-        return integer1.multiply(integer2).toString();
+    public String multiply2(String num1, String num2) {
+        long c = System.currentTimeMillis();
+        BigInteger integer1 = new BigInteger(num1);
+        BigInteger integer2 = new BigInteger(num2);
+        String str = integer1.multiply(integer2).toString();
+        System.out.println(System.currentTimeMillis() - c);
+        return str;
     }
+
     public String multiply(String num1, String num2) {
+        long c = System.currentTimeMillis();
         // 23 45
         if (num1.equals("0") || num2.equals("0")) {
             return "0";
@@ -100,6 +105,7 @@ public class StrMultiply {
             }
             stringBuilder.append(res[y]);
         }
+        System.out.println(System.currentTimeMillis() - c);
         return stringBuilder.toString();
     }
 }
