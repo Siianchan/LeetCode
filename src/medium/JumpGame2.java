@@ -1,6 +1,5 @@
 package medium;
 
-import com.sun.org.apache.regexp.internal.RE;
 
 /**
  * @ProjectName: LeetCode
@@ -21,13 +20,12 @@ public class JumpGame2 {
      * 从下标为 0 跳到下标为 1 的位置，跳 1 步，然后跳 3 步到达数组的最后一个位置。
      */
     static int ans = 0;
-
     public static void main(String[] args) {
+
         JumpGame2 jumpGame2 = new JumpGame2();
         int[] a = new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 0};
 //        [5,6,4,4,6,9,4,4,7,4,4,8,2,6,8,1,5,9,6,5,2,7,9,7,9,6,9,4,1,6,8,8,4,4,2,0,3,8,5]
 //        int[] a=new int[]{2,3,1,1,4};
-
         System.out.println(jumpGame2.jump(a));
     }
 
