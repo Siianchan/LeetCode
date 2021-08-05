@@ -18,7 +18,7 @@ public class Permute {
      * 输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
      */
     public static void main(String[] args) {
-        int[] nums = new int[]{1, 2, 3};
+        int[] nums = new int[]{1, 1, 2};
         Permute permute = new Permute();
         permute.permute(nums);
     }
@@ -35,6 +35,10 @@ public class Permute {
     public void dfs(int[] nums, boolean[] bl, int max, LinkedList<Integer> pl, List<List<Integer>> ans) {
         //深搜
         if (max == nums.length) {
+//            全排列2，去重
+//            if(ans.contains(new ArrayList<>(pl))){
+//                return;
+//            }
             ans.add(new ArrayList<>(pl));
             return;
         }
