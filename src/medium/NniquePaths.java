@@ -19,29 +19,29 @@ public class NniquePaths {
         System.out.println(nniquePaths.uniquePaths(7, 3));
     }
 
-        int[][] dirs = new int[][]{{1, 0}, {0, 1}};
+    int[][] dirs = new int[][]{{1, 0}, {0, 1}};
 
-        public int uniquePaths(int m, int n) {
-            int[][] memo = new int[m][n];
+    public int uniquePaths(int m, int n) {
+        int[][] memo = new int[m][n];
 
-            return dfs(0, 0, m, n, memo);
+        return dfs(0, 0, m, n, memo);
+    }
+
+    private int dfs(int x, int y, int m, int n, int[][] memo) {
+        if (x == m - 1 && y == n - 1) {
+            return 1;
         }
-
-        private int dfs(int x, int y, int m, int n, int[][] memo) {
-            if (x == m - 1 && y == n - 1) {
-                return 1;
-            }
-            if (memo[x][y] != 0) {
-                return memo[x][y];
-            }
-            int sum = 0;
-            for (int[] dir : dirs) {
-                int nx = x + dir[0];
-                int ny = y + dir[1];
-                if (nx >= m || ny >= n) continue;
-                sum += dfs(nx, ny, m, n, memo);
-            }
-            memo[x][y] = sum;
-            return sum;
+        if (memo[x][y] != 0) {
+            return memo[x][y];
         }
+        int sum = 0;
+        for (int[] dir : dirs) {
+            int nx = x + dir[0];
+            int ny = y + dir[1];
+            if (nx >= m || ny >= n) continue;
+            sum += dfs(nx, ny, m, n, memo);
+        }
+        memo[x][y] = sum;
+        return sum;
+    }
 }
