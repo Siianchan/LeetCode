@@ -81,29 +81,40 @@ public class AddTwoNumbers {
     }
 }
 
-class   ListNode {
+class ListNode {
     int val;
     ListNode next;
 
-    ListNode(int x) {
-        val = x;
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
     }
 }
+
 class MyNode {
-    ListNode head=null;
-    public void addNode(int a){
-        ListNode l=new ListNode(a);
-        if(head==null){
-            head=l;
+    ListNode head = null;
+
+    public void addNode(int a) {
+        ListNode l = new ListNode(a);
+        if (head == null) {
+            head = l;
             return;
         }
-        ListNode tmp=head;
-        while (tmp.next!=null){
-            tmp=tmp.next;
+        ListNode tmp = head;
+        while (tmp.next != null) {
+            tmp = tmp.next;
         }
-        tmp.next=l;
+        tmp.next = l;
     }
-    public  void printNode() {
+
+    public void printNode() {
         ListNode head = this.head;
         while (head != null) {
             System.out.println(head.val);
