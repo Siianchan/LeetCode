@@ -16,7 +16,6 @@ public class MaxDepth {
      * 给定二叉树 [3,9,20,null,null,15,7]，
      * 返回它的最大深度 3 。
      */
-
     int num = 0;
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(1);
