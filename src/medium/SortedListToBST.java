@@ -23,7 +23,6 @@ public class SortedListToBST {
     public static void main(String[] args) {
 
     }
-
     public TreeNode sortedListToBST(ListNode head) {
         if (head == null) return null;
         if (head.next == null) return new TreeNode(head.val);
