@@ -39,6 +39,9 @@ public class MinDepth {
     }
 
     public void dfs(TreeNode root, int num) {
+        if (num > minArr) {
+            return;
+        }
         if (root.left == null && root.right == null) {
             if (num < minArr) {
                 minArr = num;
