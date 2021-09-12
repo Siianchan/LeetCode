@@ -12,46 +12,29 @@ public class Flatten {
      * 展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。
      * 展开后的单链表应该与二叉树 先序遍历 顺序相同。
      */
+    TreeNode result1 = new TreeNode();
+    TreeNode result2 = result1;
 
-    public static void main(String[] args) {
-
-    }
-
-    FlattenTreeNode result = new FlattenTreeNode();
-
-    public void flatten(FlattenTreeNode root) {
+    public void flatten(TreeNode root) {
         if (root != null) {
             dfs(root);
-            root = result.right;
+            root.right = result2.right.right;
+            root.left = null;
         }
     }
 
-    public void dfs(FlattenTreeNode root) {
-        result.right = new FlattenTreeNode(root.val);
-        result = result.right;
+    public void dfs(TreeNode root) {
+        result1.right = new TreeNode(root.val);
+        result1 = result1.right;
         if (root.left != null)
             dfs(root.left);
         if (root.right != null)
             dfs(root.right);
     }
+
+    public static void main(String[] args) {
+
+    }
+
 }
 
-
-class FlattenTreeNode {
-    int val;
-    FlattenTreeNode left;
-    FlattenTreeNode right;
-
-    FlattenTreeNode() {
-    }
-
-    FlattenTreeNode(int val) {
-        this.val = val;
-    }
-
-    FlattenTreeNode(int val, FlattenTreeNode left, FlattenTreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
