@@ -8,7 +8,6 @@ package medium;
  */
 public class CanCompleteCircuit {
     public static void main(String[] args) {
-
     }
 
     int startNum = -1;
