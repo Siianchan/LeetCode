@@ -19,6 +19,7 @@ public class HasCycle {
 
     public static void main(String[] args) {
 
+        
     }
 
     public boolean hasCycle(ListNode head) {
