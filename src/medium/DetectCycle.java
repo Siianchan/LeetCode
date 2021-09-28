@@ -31,6 +31,7 @@ public class DetectCycle {
         }
         fast = head;
         while (slow != fast) {
+            
             slow = slow.next;
             fast = fast.next;
         }
