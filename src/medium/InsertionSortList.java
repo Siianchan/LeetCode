@@ -19,7 +19,6 @@ public class InsertionSortList {
     public static void main(String[] args) {
 
     }
-
     public ListNode insertionSortList(ListNode head) {
         if (head == null) {
             return head;
