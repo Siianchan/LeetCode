@@ -8,7 +8,7 @@ package medium;
  */
 public class MaxProduct {
     int min = Integer.MIN_VALUE;
-    
+
     public static void main(String[] args) {
         int[] arr = new int[]{-1, -2, -2, -5};
         MaxProduct maxProduct = new MaxProduct();
