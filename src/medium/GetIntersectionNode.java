@@ -15,7 +15,6 @@ public class GetIntersectionNode {
      * 注意，函数返回结果后，链表必须 保持其原始结构 。
      */
     public static void main(String[] args) {
-
     }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
