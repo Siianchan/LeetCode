@@ -7,7 +7,6 @@ package medium;
  * @Description:
  */
 public class CompareVersion {
-    
     /**
      * 给你两个版本号 version1
      * 和 version2 ，请你比较它们。
