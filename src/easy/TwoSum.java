@@ -1,4 +1,8 @@
 package easy;
+
+import java.util.HashMap;
+import java.util.Set;
+
 /**
  * @ProjectName: LeetCode
  * @Author: ZhangXiangQiang
@@ -26,10 +30,41 @@ public class TwoSum {
             for (int y = x + 1; y < nums.length; y++) {
                 b = nums[y];
                 if (a + b == target) {
-                    answer[0] = x;
-                    answer[1] = y;
+                    answer[0] = x + 1;
+                    answer[1] = y + 1;
                     break;
                 }
+            }
+        }
+        return answer;
+    }
+
+    public int[] twoSum2(int[] nums, int target) {
+        int[] answer = new int[2];
+        HashMap<Integer, Integer> hashMap = new HashMap();
+        HashMap<Integer, Integer> hashMap2 = new HashMap();
+        for (int x = 0; x < nums.length; x++) {
+            if (hashMap.get(nums[x]) == null) {
+                hashMap.put(nums[x], x + 1);
+            } else {
+                hashMap2.put(nums[x], x + 1);
+            }
+        }
+        Set<Integer> set = hashMap.keySet();
+        for (Integer s : set
+        ) {
+            int arrA = hashMap.get(s);
+            int a = target - s;
+            Integer arrB;
+            if (a == s) {
+                arrB = hashMap2.get(a);
+            } else {
+                arrB = hashMap.get(a);
+            }
+            if (arrB != null) {
+                answer[0] = arrA < arrB ? arrA : arrB;
+                answer[1] = arrA > arrB ? arrA : arrB;
+                break;
             }
         }
         return answer;
