@@ -21,27 +21,17 @@ public class ConvertToTitle {
      * ...
      */
 
-
     public static void main(String[] args) {
         ConvertToTitle convertToTitle = new ConvertToTitle();
-        System.out.println(convertToTitle.convertToTitle(2147483647));
+        System.out.println(convertToTitle.convertToTitle(27));
     }
 
     public String convertToTitle(int columnNumber) {
         StringBuilder stringBuilder = new StringBuilder();
         while (columnNumber > 0) {
-            int yu = columnNumber % 26;
-            if (yu != 0) {
-                char c = (char) ('A' + yu - 1);
-                stringBuilder.insert(0, String.valueOf(c));
-            } else {
-                stringBuilder.insert(0, "Z");
-                if (columnNumber > (Math.pow(26, stringBuilder.length()))) {
-                    columnNumber -= Math.pow(26, stringBuilder.length());
-                } else {
-                    return stringBuilder.toString();
-                }
-            }
+            int yu = (columnNumber - 1) % 26 + 1;//偏移一位方便计算26
+            stringBuilder.insert(0, String.valueOf((char) ('A' + yu - 1)));
+            columnNumber -= yu;
             columnNumber /= 26;
         }
         return stringBuilder.toString();
