@@ -26,7 +26,7 @@ public class ConvertToTitle {
         System.out.println(convertToTitle.convertToTitle(27));
     }
 
-    
+
     public String convertToTitle(int columnNumber) {
         StringBuilder stringBuilder = new StringBuilder();
         while (columnNumber > 0) {
