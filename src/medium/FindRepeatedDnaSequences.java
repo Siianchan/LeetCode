@@ -25,7 +25,6 @@ public class FindRepeatedDnaSequences {
     public static void main(String[] args) {
 
     }
-
     static final int L = 10;
 
     public List<String> findRepeatedDnaSequences(String s) {
