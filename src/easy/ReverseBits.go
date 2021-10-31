@@ -12,7 +12,6 @@ package main
 因此返回 964176192，其二进制表示形式为 00111001011110000010100101000000。*/
 
 func main() {
-
 }
 func reverseBits(n uint32) (rev uint32) {
 	for i := 0; i < 32 && n > 0; i++ {
