@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 /*颠倒给定的 32 位无符号整数的二进制位。
 提示：
 请注意，在某些语言（如 Java）中，没有无符号整数类型。在这种情况下，输入和输出都将被指定为有符号整数类型，并且不应影响您的实现，因为无论整数是有符号的还是无符号的，其内部的二进制表示形式都是相同的。
@@ -12,6 +17,7 @@ package main
 因此返回 964176192，其二进制表示形式为 00111001011110000010100101000000。*/
 
 func main() {
+	Sort()
 }
 func reverseBits(n uint32) (rev uint32) {
 	for i := 0; i < 32 && n > 0; i++ {
@@ -19,4 +25,28 @@ func reverseBits(n uint32) (rev uint32) {
 		n >>= 1
 	}
 	return
+}
+
+func Sort() {
+	start := time.Now().UnixNano() / 1e6
+	const NUM int = 100000000
+	for i := 0; i < NUM; i++ {
+		arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+		bubbleSort(arr)
+	}
+	//打印消耗时间
+	fmt.Println(time.Now().UnixNano()/1e6 - start)
+}
+
+//排序
+func bubbleSort(arr []int) {
+	for j := 0; j < len(arr)-1; j++ {
+		for k := 0; k < len(arr)-1-j; k++ {
+			if arr[k] < arr[k+1] {
+				temp := arr[k]
+				arr[k] = arr[k+1]
+				arr[k+1] = temp
+			}
+		}
+	}
 }
