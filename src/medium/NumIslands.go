@@ -13,7 +13,7 @@ func numIslands(grid [][]byte) int {
 	ret := 0
 	for x := 0; x < len(grid); x++ {
 		for y := 0; y < len(grid[x]); y++ {
-			if grid[x][y] == '1' {
+			if grid[x][y] == '1' { //当查找到1时，进行深搜，将关联的1全部变为0，即为一个岛屿
 				dfs(grid, x, y)
 				ret += 1
 			}
@@ -23,9 +23,11 @@ func numIslands(grid [][]byte) int {
 }
 func dfs(grid [][]byte, x int, y int) {
 	if grid[x][y] == '0' {
+		//结束条件
 		return
 	}
 	grid[x][y] = '0'
+	//深搜搜寻岛屿
 	if x > 0 {
 		dfs(grid, x-1, y)
 	}
