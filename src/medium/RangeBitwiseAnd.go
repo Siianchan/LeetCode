@@ -7,9 +7,10 @@ package main
 输出：4*/
 
 func main() {
-
 }
 func rangeBitwiseAnd(left int, right int) int {
+	/*我们观察按位与运算的性质。对于一系列的位，例如 [1, 1, 0, 1, 1][1,1,0,1,1]，
+	只要有一个零值的位，那么这一系列位的按位与运算结果都将为零。*/
 	shift := 0
 	for left < right {
 		left, right = left>>1, right>>1

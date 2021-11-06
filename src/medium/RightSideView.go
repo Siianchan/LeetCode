@@ -18,7 +18,6 @@ type TreeNode struct {
 }
 
 func main() {
-
 	rightSideView(nil)
 }
 
