@@ -11,8 +11,8 @@ func main() {
 	isHappy(116)
 }
 func isHappy(n int) bool {
-	jiLu := make(map[int]bool)
-	for n != 1 && !jiLu[n] {
+	jiLu := make(map[int]bool) //哈希表记录已循环过的数字
+	for n != 1 && !jiLu[n] {   //当和等于1或者开始循环后就退出循环
 		jiLu[n] = true
 		newInt := 0
 		for n > 0 {
