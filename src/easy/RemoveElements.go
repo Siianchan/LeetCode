@@ -12,15 +12,16 @@ func main() {
 
 }
 func removeElements(head *ListNode, val int) *ListNode {
-	if head == nil {
-		return nil
-	}
 	for head != nil && head.Val == val {
+		//查看头部节点是否等于给出的数字
+		//如果是就直接删除掉
 		head = head.Next
 	}
+	//返回的头部节点
 	first := head
 	for head != nil && head.Next != nil {
 		if head.Next.Val == val {
+			//删除等于给出数字的节点
 			head.Next = head.Next.Next
 		} else {
 			head = head.Next
