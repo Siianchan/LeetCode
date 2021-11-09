@@ -7,7 +7,7 @@ import (
 
 func main() {
 	a := time.Now().UnixNano() / 1e6
-	fmt.Println(countPrimes2(10000000))
+	fmt.Println(countPrimes2(100000000))
 	fmt.Println(time.Now().UnixNano()/1e6 - a)
 }
 
@@ -52,7 +52,6 @@ func countPrimes2(n int) int {
 }
 
 func countPrimes3(n int) int {
-
 	//查找小于n的质数，线性筛，1亿素数大概1.7秒，10亿14秒
 	//创建一个数组，大小等于n,false代表是质数，true代表不是质数
 	arr := make([]bool, n)
