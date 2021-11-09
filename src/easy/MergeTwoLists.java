@@ -54,8 +54,7 @@ public class MergeTwoLists {
         return myNode.head;
     }
 }
-
-class ListNode {
+ class ListNode {
     int val;
     ListNode next;
 

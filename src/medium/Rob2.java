@@ -35,5 +35,4 @@ public class Rob2 {
         }
         return dp[nums.length - 2];
     }
-
 }
