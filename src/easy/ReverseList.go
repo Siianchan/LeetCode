@@ -6,6 +6,7 @@ func main() {
 
 }
 func reverseList(head *ListNode) *ListNode {
+
 	//1 2 3 4 5
 	var pre *ListNode = nil
 	var tmp *ListNode
