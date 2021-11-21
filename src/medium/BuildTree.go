@@ -4,7 +4,6 @@ package main
 //假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
 
 func main() {
-
 }
 func buildTree(preorder []int, inorder []int) *TreeNode {
 	ret := &TreeNode{}
