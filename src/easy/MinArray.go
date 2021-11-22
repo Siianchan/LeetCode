@@ -7,6 +7,7 @@ package main
 func main() {
 
 }
+
 func minArray(numbers []int) int {
 	for i := len(numbers) - 1; i > 0; i-- {
 		if numbers[i-1] > numbers[i] {
