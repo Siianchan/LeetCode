@@ -10,6 +10,7 @@ import "fmt"
 func main() {
 	fmt.Println(movingCount(16, 18, 9))
 }
+
 func movingCount(m int, n int, k int) int {
 	var maxRet int
 	arr := make([][]int, m)
