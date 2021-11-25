@@ -7,6 +7,7 @@ package easy;
  * @Description:
  */
 public class HammingWeight {
+
     public static void main(String[] args){
             hammingWeight(4294967293l);
     }
