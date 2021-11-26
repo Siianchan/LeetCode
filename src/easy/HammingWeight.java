@@ -7,8 +7,14 @@ package easy;
  * @Description:
  */
 public class HammingWeight {
+<<<<<<< HEAD
     public static void main(String[] args) {
         test();
+=======
+
+    public static void main(String[] args){
+            hammingWeight(4294967293l);
+>>>>>>> Golang
     }
 
     public static int hammingWeight(long n) {
