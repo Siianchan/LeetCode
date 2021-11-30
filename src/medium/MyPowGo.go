@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+
 	myPow(2.0, -2)
 }
 
