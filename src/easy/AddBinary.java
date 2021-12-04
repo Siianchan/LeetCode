@@ -18,9 +18,8 @@ public class AddBinary {
      */
     public static void main(String args[]) {
         // 22   0
-        System.out.println(addBinary("101011111111", "1011"));
+//        System.out.println(addBinary("101011111111", "1011"));
     }
-
     public static String addBinary(String a, String b) {
         a = new StringBuilder(a).reverse().toString();
         b = new StringBuilder(b).reverse().toString();
