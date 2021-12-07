@@ -13,12 +13,29 @@ public class QuickSort {
     public static void main(String[] args) {
         int a[] = {2, 1, 6, 5, 3, 4, 4, 5};
         //4 5 4 6
-        quickSort(a, 0, a.length - 1);
-
+//        quickSort(a, 0, a.length - 1);
+        f(a);
+System.out.println(f2("hello"));
 //        insertSort(a);
         for (int x = 0; x < a.length; x++) {
             System.out.println(a[x]);
         }
+    }
+
+    public static void f(int a[]) {
+        for (int x = 0; x < a.length; x++) {
+            for (int y = 0; y < a.length - x - 1; y++) {
+                if (a[y] > a[y + 1]) {
+                    int temp = a[y];
+                    a[y] = a[y + 1];
+                    a[y + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static String f2(String str) {
+        return new StringBuilder(str).reverse().toString();
     }
 
     public static void selectSort(int a[]) {
