@@ -31,7 +31,7 @@ public class LevelOrder {
         treeNode2.right = treeNode5;
         treeNode3.left = treeNode6;
         treeNode3.right = treeNode7;
-        System.out.println(levelOrder(null));
+        System.out.println(levelOrder(fir));
     }
 
     public static List<List<Integer>> levelOrder(TreeNode root) {
