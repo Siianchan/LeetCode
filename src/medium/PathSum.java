@@ -46,14 +46,20 @@ public class PathSum {
     }
 
     public void dfs(TreeNode root, int targetSum, int nowNum, LinkedList linkedList) {
+        //添加当前节点
         linkedList.addLast(root.val);
         if (root.left == null && root.right == null)
+            //当左右子树为0时，说明到了叶子节点
             if (nowNum + root.val == targetSum)
+                //当和为给定target时，加入路径
                 arrayList.add(new LinkedList<>(linkedList));
         if (root.left != null)
+            //如果左子树不为空，递归左子树
             dfs(root.left, targetSum, nowNum + root.val, linkedList);
         if (root.right != null)
+            //如果右子树不为空，递归右子树
             dfs(root.right, targetSum, nowNum + root.val, linkedList);
+        //移除节点
         linkedList.removeLast();
     }
 }
