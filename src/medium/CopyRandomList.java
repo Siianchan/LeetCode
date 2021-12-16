@@ -34,6 +34,7 @@ class NodeR {
 public class CopyRandomList {
 
     public NodeR copyRandomList(NodeR head) {
+        //循环两边，第一遍建立hash映射，第二遍建立next和random的引用
         if (head == null) return null;
         NodeR cur = head;
         Map<NodeR, NodeR> map = new HashMap<>();
@@ -52,4 +53,5 @@ public class CopyRandomList {
         // 5. 返回新链表的头节点
         return map.get(head);
     }
+    
 }
