@@ -25,11 +25,13 @@ public class Permutation {
     }
 
     public String[] permutation(String s) {
+        //全排列，不重复
         if (s == null) {
             return null;
         }
         char[] ch = s.toCharArray();
         boolean[] fl = new boolean[ch.length];
+        //先按字典序进行排序
         Arrays.sort(ch);
         dfs(ch, fl, new StringBuilder(), 0);
         System.out.println(linkedList);
@@ -38,11 +40,13 @@ public class Permutation {
 
     void dfs(char[] ch, boolean[] fl, StringBuilder stringBuilder, int num) {
         if (num >= ch.length) {
+            //达到结果，添加到答案中
             linkedList.add(stringBuilder.toString());
             return;
         }
         for (int x = 0; x < ch.length; x++) {
             if (x > 0 && ch[x] == ch[x - 1] && !fl[x - 1]) {
+                //如果该元素和上一个元素相同时，上一个元素未使用的话，跳过
                 continue;
             }
             if (!fl[x]) {
