@@ -23,16 +23,20 @@ public class MajorityElement {
     }
 
     public int majorityElement(int[] nums) {
+        //哈希表解决
         if (nums.length == 1) return nums[0];
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         for (int x = 0; x < nums.length; x++) {
             Integer var1 = hashMap.get(nums[x]);
             if (var1 != null) {
                 if (++var1 > nums.length / 2) {
+                    //如果已经大于一半了，直接返回
                     return nums[x];
                 }
+                //存入
                 hashMap.put(nums[x], var1);
             } else {
+                //首次存入
                 hashMap.put(nums[x], 1);
             }
         }
