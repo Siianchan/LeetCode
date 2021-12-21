@@ -42,6 +42,7 @@ public class MinNumber {
     }
 
     public boolean aIsMax(int a, int b) {
+        
         String s1 = "" + a;
         String s2 = "" + b;
         for (int x = 0; x < s1.length() && x < s2.length(); x++) {
