@@ -39,7 +39,7 @@ public class TwoSum {
         return answer;
     }
 
-    public  static  int[] twoSum2(int[] nums, int target) {
+    public static int[] twoSum2(int[] nums, int target) {
         int[] answer = new int[2];
         HashMap<Integer, Integer> hashMap = new HashMap();
         HashMap<Integer, Integer> hashMap2 = new HashMap();
@@ -70,4 +70,37 @@ public class TwoSum {
         }
         return answer;
     }
+
+    public static int[] twoSum3(int[] nums, int target) {
+        //hash表映射
+        int[] answer = new int[2];
+        HashMap<Integer, Integer> hashMap = new HashMap();
+        for (int i : nums
+        ) {
+            hashMap.put(i, 1);
+        }
+        for (int i : nums
+        ) {
+            int a = i;
+            Integer b = hashMap.get(target - a);
+            if (b != null) {
+                answer[0] = a;
+                answer[1] = target - a;
+            }
+        }
+        return answer;
+    }
+
+    public int[] twoSum4(int[] nums, int target) {
+        //双指针
+        int i = 0, j = nums.length - 1;
+        while (i < j) {
+            int s = nums[i] + nums[j];
+            if (s < target) i++;
+            else if (s > target) j--;
+            else return new int[]{nums[i], nums[j]};
+        }
+        return new int[0];
+    }
+
 }
