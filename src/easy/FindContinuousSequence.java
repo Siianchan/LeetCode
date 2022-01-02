@@ -26,7 +26,7 @@ public class FindContinuousSequence {
     }
 
     public int[][] findContinuousSequence(int target) {
-        
+
         int i = 1; // 滑动窗口的左边界
         int j = 1; // 滑动窗口的右边界
         int sum = 0; // 滑动窗口中数字的和
