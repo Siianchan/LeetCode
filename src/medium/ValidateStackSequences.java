@@ -25,35 +25,18 @@ import java.util.Stack;
 
 public class ValidateStackSequences {
     public static void main(String[] args) {
-        System.out.println(validateStackSequences(new int[]{1, 2, 3, 4, 5}, new int[]{4, 5, 3, 1, 2}));
+        System.out.println(validateStackSequences(new int[]{1, 2, 3, 4, 5}, new int[]{4, 5, 3, 2, 1}));
     }
 
+
     public static boolean validateStackSequences(int[] pushed, int[] popped) {
-        Stack<Integer> test = new Stack();
         Stack<Integer> push = new Stack();
-        Stack<Integer> pop = new Stack();
-        for (int x = pushed.length - 1; x >= 0; x--) {
-            push.push(pushed[x]);
-            pop.push(popped[x]);
+        int i = 0;
+        int o = 0;
+        for (; o < popped.length && i < pushed.length; i++) {
+            push.push(pushed[i]);
+            while (!push.isEmpty() && popped[o] == push.peek() && o++ < popped.length) push.pop();
         }
-        while (!pop.isEmpty()) {
-            int a = pop.peek();
-            if (!push.isEmpty() && push.peek() == a) {
-                push.pop();
-                pop.pop();
-                continue;
-            }
-            if (!test.isEmpty() && test.peek() == a) {
-                test.pop();
-                pop.pop();
-                continue;
-            }
-            if (!push.isEmpty()) {
-                test.push(push.pop());
-            } else {
-                return false;
-            }
-        }
-        return true;
+        return push.isEmpty();
     }
 }
