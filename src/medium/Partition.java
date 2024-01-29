@@ -23,38 +23,29 @@ public class Partition {
             st = st.next;
         }
         Partition partition = new Partition();
-        partition.partition(first, 3);
+        partition.partition2(first, 3);
     }
 
-    public ListNode partition(ListNode head, int x) {
-        if (head == null) {
-            return null;
-        }
-        ListNode small = new ListNode(-999);
-        ListNode last = new ListNode(999);
-        ListNode firstSmall = small;
-        ListNode firstLast = last;
+    public ListNode partition2(ListNode head, int x) {
+        if (head == null) return null;
+        ListNode big = new ListNode(0);
+        ListNode small = new ListNode(0);
+        ListNode firstS = small;
+        ListNode firstB = big;
         while (head != null) {
             if (head.val < x) {
                 small.next = head;
-                last.next = null;
                 small = small.next;
             } else {
-                small.next = null;
-                last.next = head;
-                last = last.next;
+                big.next = head;
+                big = big.next;
             }
             head = head.next;
         }
-        small.next = firstLast.next;
-//        while (firstSmall != null) {
-//            System.out.println(firstSmall.val);
-//            firstSmall = firstSmall.next;
-//       }
-////        while (firstLast != null) {
-////            System.out.println(firstLast.val);
-////            firstLast = firstLast.next;
-////        }
-        return firstSmall.next;
+        //防止链表循环，要将尾节点变成空
+        big.next = null;
+        small.next = firstB.next;
+        return firstS.next;
     }
+
 }
