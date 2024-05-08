@@ -22,18 +22,43 @@ public class AddTwoNumbers {
     public static void main(String args[]) {
         MyNode myNode = new MyNode();
         MyNode myNode2 = new MyNode();
-        myNode.addNode(0);
+        myNode.addNode(7);
+        myNode.addNode(1);
+        myNode.addNode(6);
+        myNode2.addNode(5);
+        myNode2.addNode(9);
+        myNode2.addNode(2);
         myNode2.addNode(1);
-        myNode2.addNode(9);
-        myNode2.addNode(9);
-        myNode2.addNode(9);
-        myNode2.addNode(9);
-        myNode2.addNode(9);
-        myNode2.addNode(9);
-        myNode2.addNode(9);
-        myNode2.addNode(9);
-        myNode2.addNode(9);
-        addTwoNumbers(myNode.head, myNode2.head);
+        printNode(addTwoNumbers(myNode.head, myNode2.head));
+    }
+
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int jw = 0;
+        ListNode head = new ListNode();
+        ListNode sum = head;
+        while (l1 != null || l2 != null) {
+            int sumNum = jw;
+            if (l1 != null) {
+                sumNum += l1.val;
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                sumNum += l2.val;
+                l2 = l2.next;
+            }
+            if (sumNum < 10) {
+                sum.next = new ListNode(sumNum);
+                jw = 0;
+            } else {
+                jw = 1;
+                sum.next = new ListNode(sumNum % 10);
+            }
+            sum = sum.next;
+        }
+        if (jw != 0) {
+            sum.next = new ListNode(1);
+        }
+        return head.next;
     }
 
     public static void printNode(ListNode listNode) {
@@ -44,7 +69,7 @@ public class AddTwoNumbers {
         }
     }
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public static ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         StringBuilder a = new StringBuilder();
         StringBuilder b = new StringBuilder();
         while (l1 != null || l2 != null) {
