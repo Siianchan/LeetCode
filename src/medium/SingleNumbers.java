@@ -31,17 +31,14 @@ public class SingleNumbers {
             ret ^= c;
         }
         //先对数组进行异或操作，得出的结果是两个不同数字的异或结果
-//        System.out.println(ret);
         int h = 1;
         while ((ret & h) == 0) {
             //找出结果的第一位为1的数字
             h <<= 1;
         }
-//        System.out.println(h);
         int a = 0, b = 0;
         for (int n : nums
         ) {
-//            System.out.println(h & n);
             if ((h & n) == 0) {
                 //对数据进行分组，将两个不同的数字分到两个组，异或操作就能得到最后结果了
                 a ^= n;
@@ -49,7 +46,6 @@ public class SingleNumbers {
                 b ^= n;
             }
         }
-        System.out.println(a + " " + b);
         return new int[]{a, b};
     }
 }
